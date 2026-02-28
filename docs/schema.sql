@@ -25,7 +25,7 @@ CREATE TABLE fulltext_weight (
     CONSTRAINT CK_fulltext_weight_single CHECK (id = 1)
 );
 
-INSERT INTO fulltext_weight (id) VALUES (1);
+INSERT INTO fulltext_weight (id) VALUES (5);
 
 -- full-text index
 CREATE FULLTEXT CATALOG ft_station AS DEFAULT;
@@ -35,7 +35,7 @@ CREATE FULLTEXT INDEX ON stations_with_fulltext (
     station_name_r LANGUAGE 1041
 )
 KEY INDEX PK_stations_with_fulltext
-WITH STOPLIST = SYSTEM;
+WITH STOPLIST = OFF;
 
 CREATE SPATIAL INDEX IX_stations_with_fulltext_geog
 ON stations_with_fulltext(geog);
