@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Station Suggest</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Station Full-Text</p>
+          <h1>駅名サジェスト検索</h1>
+          <p class="lead">キーワード入力で駅名と住所を即時に一覧表示します。</p>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="panel">
+          <div class="field">
+            <label for="keyword">キーワード</label>
+            <input
+              id="keyword"
+              type="text"
+              placeholder="例: 中野 / osaki / とうきょう"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="lat">緯度 (lat)</label>
+              <input id="lat" type="text" placeholder="例: 35.68944" />
+            </div>
+            <div class="field">
+              <label for="lon">経度 (lon)</label>
+              <input id="lon" type="text" placeholder="例: 139.70056" />
+            </div>
+          </div>
+
+          <div class="meta">
+            <span id="status">入力待ち</span>
+          </div>
+        </section>
+
+        <section class="results">
+          <ul id="results"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
